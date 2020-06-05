@@ -10,6 +10,11 @@ namespace SUBD.Service
     public class AutoLogic : ILogic<Auto>
     {
         private static AutoServiceDataBase db = Program.db;
+        private readonly AutoServiceDataBase context;
+        public AutoLogic(AutoServiceDataBase context)
+        {
+            this.context = context;
+        }
         public void Create(Auto model)
         {
             var news = db.Autos.FirstOrDefault(c => c.Id == model.Id);
@@ -50,6 +55,20 @@ namespace SUBD.Service
         public Auto Get(int Id)
         {
             return db.Autos.FirstOrDefault(c => c.Id == Id);
+        }
+        public List<Auto> ReadPage(int skip, int take)
+        {
+            return context.Autos
+            .Skip(skip).Take(take).Select(rec =>
+            new Auto
+            {
+                Id = rec.Id,
+                ModelName = rec.ModelName,
+                BrandName = rec.BrandName,
+                TypeMotor = rec.TypeMotor,
+                CountAirbags = rec.CountAirbags,
+            })
+            .ToList();
         }
     }
 }

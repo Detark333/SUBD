@@ -10,6 +10,11 @@ namespace SUBD.Service
     public class SalePeopleLogic : ILogic<SalePeople>
     {
         private static AutoServiceDataBase db = Program.db;
+        private readonly AutoServiceDataBase context;
+        public SalePeopleLogic(AutoServiceDataBase context)
+        {
+            this.context = context;
+        }
         public void Create(SalePeople model)
         {
             var news = db.SalePeoples.FirstOrDefault(c => c.Id == model.Id);
@@ -49,6 +54,19 @@ namespace SUBD.Service
         public SalePeople Get(int Id)
         {
             return db.SalePeoples.FirstOrDefault(c => c.Id == Id);
+        }
+        public List<SalePeople> ReadPage(int skip, int take)
+        {
+            return context.SalePeoples
+            .Skip(skip).Take(take).Select(rec =>
+            new SalePeople
+            {
+                Id = rec.Id,
+                Name = rec.Name,
+                WageDollars = rec.WageDollars,
+                InformationId = rec.InformationId,
+            })
+            .ToList();
         }
     }
 }

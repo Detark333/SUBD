@@ -10,6 +10,11 @@ namespace SUBD.Service
     public class ContractLogic : ILogic<Contract>
     {
         private static AutoServiceDataBase db = Program.db;
+        private readonly AutoServiceDataBase context;
+        public ContractLogic(AutoServiceDataBase context)
+        {
+            this.context = context;
+        }
         public void Create(Contract model)
         {
             var news = db.Contracts.FirstOrDefault(c => c.Id == model.Id);
@@ -51,6 +56,20 @@ namespace SUBD.Service
         public Contract Get(int Id)
         {
             return db.Contracts.FirstOrDefault(c => c.Id == Id);
+        }
+        public List<Contract> ReadPage(int skip, int take)
+        {
+            return context.Contracts
+            .Skip(skip).Take(take).Select(rec =>
+            new Contract
+            {
+                Id = rec.Id,
+                Curency = rec.Curency,
+                ClientId = rec.ClientId,
+                SalePeopleId = rec.SalePeopleId,
+                AutoId = rec.AutoId
+            })
+            .ToList();
         }
     }
 }

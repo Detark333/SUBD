@@ -10,6 +10,11 @@ namespace SUBD.Service
     public class ClientLogic : ILogic<Client>
     {
         private static AutoServiceDataBase db = Program.db;
+        private readonly AutoServiceDataBase context;
+        public ClientLogic(AutoServiceDataBase context)
+        {
+            this.context = context;
+        }
         public void Create(Client model)
         {
             var news = db.Clients.FirstOrDefault(c => c.Name == model.Name);
@@ -48,6 +53,18 @@ namespace SUBD.Service
         public Client Get(int Id)
         {
             return db.Clients.FirstOrDefault(c => c.Id == Id);
+        }
+        public List<Client> ReadPage(int skip, int take)
+        {
+            return context.Clients
+            .Skip(skip).Take(take).Select(rec =>
+            new Client
+            {
+                Id = rec.Id,
+                Name = rec.Name,
+                InformationId = rec.InformationId
+            })
+            .ToList();
         }
     }
 }

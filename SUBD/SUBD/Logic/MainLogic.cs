@@ -101,14 +101,7 @@ namespace SUBD.Logic
             };
             salePeopleLogic.Delete(user);
         }
-        public void ReadSalePeople()
-        {
-            var list = salePeopleLogic.Read();
-            foreach (var p in list)
-            {
-                Console.WriteLine(p.Id + " " + p.Name + " " + p.InformationId + " " + p.WageDollars);
-            }
-        }
+        
         public void DeleteInformation(int id, string Adress, string PhoneNumber, string Passport)
         {
             Information user = new Information()
@@ -131,13 +124,7 @@ namespace SUBD.Logic
             };
             informationLogic.Update(user);
         }
-        public void ReadInformation()
-        {
-            foreach (var p in informationLogic.Read())
-            {
-                Console.WriteLine(p.Id + " " + p.Adress + " " + p.PhoneNumber + " " + p.Passport);
-            }
-        }
+        
         public void DeleteContract(int id, string Curency, int Amount, int ClientId, int SalePeopleId, int AutoId)
         {
             Contract user = new Contract()
@@ -164,13 +151,7 @@ namespace SUBD.Logic
             };
             contractLogic.Update(user);
         }
-        public void ReadContract()
-        {
-            foreach (var p in contractLogic.Read())
-            {
-                Console.WriteLine(p.Id + " " + p.Curency + " " + p.Amount + " " + p.ClientId + " " + p.SalePeopleId + " " + p.AutoId);
-            }
-        }
+        
         public void DeleteClient(int id, string Name, int InformationId)
         {
             Client user = new Client()
@@ -191,13 +172,7 @@ namespace SUBD.Logic
             };
             clientLogic.Update(user);
         }
-        public void ReadClient()
-        {
-            foreach (var p in clientLogic.Read())
-            {
-                Console.WriteLine(p.Id + " " + p.Name + " " + p.InformationId);
-            }
-        }
+        
         public void DeleteAuto(int id, string ModelName, string BrandName, string TypeMotor, int CountAirbags)
         {
             Auto user = new Auto()
@@ -222,12 +197,6 @@ namespace SUBD.Logic
             };
             autoLogic.Update(user);
         }
-        public void ReadAuto()
-        {
-            foreach (var p in autoLogic.Read())
-            {
-                Console.WriteLine(p.Id + " " + p.ModelName + " " + p.BrandName + " " + p.TypeMotor + " " + p.CountAirbags);
-            }
-        }
+        
     }
 }

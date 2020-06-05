@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\New\\SUBD\\SUBD\\SUBD.csproj": {}
+    "C:\\Users\\Denis\\source\\repos\\SUBD\\SUBD\\SUBD.csproj": {}
   },
   "projects": {
-    "E:\\New\\SUBD\\SUBD\\SUBD.csproj": {
+    "C:\\Users\\Denis\\source\\repos\\SUBD\\SUBD\\SUBD.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\New\\SUBD\\SUBD\\SUBD.csproj",
+        "projectUniqueName": "C:\\Users\\Denis\\source\\repos\\SUBD\\SUBD\\SUBD.csproj",
         "projectName": "SUBD",
-        "projectPath": "E:\\New\\SUBD\\SUBD\\SUBD.csproj",
+        "projectPath": "C:\\Users\\Denis\\source\\repos\\SUBD\\SUBD\\SUBD.csproj",
         "packagesPath": "C:\\Users\\Denis\\.nuget\\packages\\",
-        "outputPath": "E:\\New\\SUBD\\SUBD\\obj\\",
+        "outputPath": "C:\\Users\\Denis\\source\\repos\\SUBD\\SUBD\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

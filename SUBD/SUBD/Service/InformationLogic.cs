@@ -10,6 +10,11 @@ namespace SUBD.Service
     public class InformationLogic : ILogic<Information>
     {
         private static AutoServiceDataBase db = Program.db;
+        private readonly AutoServiceDataBase context;
+        public InformationLogic(AutoServiceDataBase context)
+        {
+            this.context = context;
+        }
         public void Create(Information model)
         {
             var news = db.Informations.FirstOrDefault(c => c.Id == model.Id);
@@ -50,6 +55,19 @@ namespace SUBD.Service
         public Information Get(int Id)
         {
             return db.Informations.FirstOrDefault(c => c.Id == Id);
+        }
+        public List<Information> ReadPage(int skip, int take)
+        {
+            return context.Informations
+            .Skip(skip).Take(take).Select(rec =>
+            new Information
+            {
+                Id = rec.Id,
+                Adress = rec.Adress,
+                PhoneNumber = rec.PhoneNumber,
+                Passport = rec.Passport,
+            })
+            .ToList();
         }
     }
 }

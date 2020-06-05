@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "aGjCFghqj8EbC2DNkAPj/ncZcuW/c/HB8rrzuax7H0a/ahzT5XrxXHX1qtCReyq++p1wj8m7qoNRPZajrCAOVg==",
+  "dgSpecHash": "pUVrpzq60Up01Sn6nfFZj4lLMQSSpaRXO4NiZ5ym0rXkq/P5Ml2FVEYGJSovLL9JzD9hcH3x981HYzE+Cid8ug==",
   "success": true,
-  "projectFilePath": "E:\\New\\SUBD\\SUBD\\SUBD.csproj",
+  "projectFilePath": "C:\\Users\\Denis\\source\\repos\\SUBD\\SUBD\\SUBD.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Denis\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\Denis\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.0\\microsoft.bcl.hashcode.1.1.0.nupkg.sha512",
